@@ -1,0 +1,9 @@
+{
+	"name": "datatranfer",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "527539fa-c183-4feb-8962-1318117ba33c",
+		"tenantId": "037e0179-cd0e-4201-951c-167b7554d77a"
+	}
+}
