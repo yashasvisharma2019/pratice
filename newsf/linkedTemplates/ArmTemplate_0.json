@@ -143,7 +143,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "raw to proccessed",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
