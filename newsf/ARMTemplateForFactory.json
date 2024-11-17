@@ -102,7 +102,10 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"storageaccount": "storage1234sdc"
+					}
 				},
 				"annotations": [],
 				"type": "DelimitedText",
@@ -147,7 +150,10 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"storageaccount": "storage1234sdc"
+					}
 				},
 				"annotations": [],
 				"type": "Parquet",
