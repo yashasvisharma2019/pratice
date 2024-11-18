@@ -53,6 +53,10 @@
 							"filename": {
 								"value": "@pipeline().parameters.file",
 								"type": "Expression"
+							},
+							"storrage": {
+								"value": "@pipeline().parameters.storageroom",
+								"type": "Expression"
 							}
 						}
 					}
