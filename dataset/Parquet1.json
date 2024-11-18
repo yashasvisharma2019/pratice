@@ -21,6 +21,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": "new",
 				"fileSystem": "proccesed"
 			},
 			"compressionCodec": "snappy"
