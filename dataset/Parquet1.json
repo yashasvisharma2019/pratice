@@ -8,11 +8,27 @@
 				"storageaccount": "storage1234sdc"
 			}
 		},
+		"parameters": {
+			"foldername": {
+				"type": "String"
+			},
+			"filename": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@formatDateTime(dataset().filename)",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().foldername",
+					"type": "Expression"
+				},
 				"fileSystem": "proccesed"
 			},
 			"compressionCodec": "snappy"
