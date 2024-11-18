@@ -237,6 +237,9 @@
 					},
 					"filename": {
 						"type": "string"
+					},
+					"storagename12": {
+						"type": "string"
 					}
 				},
 				"annotations": []
