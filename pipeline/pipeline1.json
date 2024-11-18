@@ -60,7 +60,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"foldername": "new",
-							"filename": "hello"
+							"filename": "hello.parquet"
 						}
 					}
 				]
