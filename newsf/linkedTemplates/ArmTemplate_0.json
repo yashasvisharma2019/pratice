@@ -70,11 +70,17 @@
 					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference",
 					"parameters": {
-						"storageaccount": "storage1234sdc"
+						"storageaccount": {
+							"value": "@dataset().storrage",
+							"type": "Expression"
+						}
 					}
 				},
 				"parameters": {
 					"filename": {
+						"type": "String"
+					},
+					"storrage": {
 						"type": "String"
 					}
 				},
@@ -129,19 +135,12 @@
 						"storageaccount": "storage1234sdc"
 					}
 				},
-				"parameters": {
-					"foldername": {
-						"type": "String"
-					},
-					"filename": {
-						"type": "String"
-					}
-				},
 				"annotations": [],
 				"type": "Parquet",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"folderPath": "new",
 						"fileSystem": "proccesed"
 					},
 					"compressionCodec": "snappy"
@@ -206,7 +205,14 @@
 								"referenceName": "DelimitedText1",
 								"type": "DatasetReference",
 								"parameters": {
-									"filename": "accounts.csv"
+									"filename": {
+										"value": "@pipeline().parameters.file",
+										"type": "Expression"
+									},
+									"storrage": {
+										"value": "@pipeline().parameters.storageroom",
+										"type": "Expression"
+									}
 								}
 							}
 						],
@@ -214,16 +220,7 @@
 							{
 								"referenceName": "Parquet1",
 								"type": "DatasetReference",
-								"parameters": {
-									"foldername": {
-										"value": "@pipeline().parameters.foldername",
-										"type": "Expression"
-									},
-									"filename": {
-										"value": "@pipeline().parameters.filename",
-										"type": "Expression"
-									}
-								}
+								"parameters": {}
 							}
 						]
 					}
@@ -232,13 +229,10 @@
 					"elapsedTimeMetric": {}
 				},
 				"parameters": {
-					"foldername": {
+					"file": {
 						"type": "string"
 					},
-					"filename": {
-						"type": "string"
-					},
-					"storagename12": {
+					"storageroom": {
 						"type": "string"
 					}
 				},
