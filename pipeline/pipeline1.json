@@ -57,32 +57,11 @@
 				"outputs": [
 					{
 						"referenceName": "Parquet1",
-						"type": "DatasetReference",
-						"parameters": {
-							"foldername": {
-								"value": "@pipeline().parameters.foldername",
-								"type": "Expression"
-							},
-							"filename": {
-								"value": "@pipeline().parameters.filename",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"parameters": {
-			"foldername": {
-				"type": "string"
-			},
-			"filename": {
-				"type": "string"
-			},
-			"storagename12": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
