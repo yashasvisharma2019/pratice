@@ -3,10 +3,19 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storageaccount": {
+					"value": "@dataset().storrage",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"filename": {
+				"type": "String"
+			},
+			"storrage": {
 				"type": "String"
 			}
 		},
