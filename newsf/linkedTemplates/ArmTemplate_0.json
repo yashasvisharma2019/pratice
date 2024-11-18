@@ -233,14 +233,6 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"parameters": {
-					"Filename": {
-						"type": "string"
-					},
-					"foldername": {
-						"type": "string"
-					}
-				},
 				"annotations": []
 			},
 			"dependsOn": [
