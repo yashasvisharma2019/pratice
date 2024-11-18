@@ -5,11 +5,17 @@
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"storageaccount": "storage1234sdc"
+				"storageaccount": {
+					"value": "@dataset().name",
+					"type": "Expression"
+				}
 			}
 		},
 		"parameters": {
 			"filename": {
+				"type": "String"
+			},
+			"name": {
 				"type": "String"
 			}
 		},
