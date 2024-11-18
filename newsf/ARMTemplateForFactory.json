@@ -83,8 +83,14 @@
 								"referenceName": "Parquet1",
 								"type": "DatasetReference",
 								"parameters": {
-									"foldername": "new",
-									"filename": "hello.parquet"
+									"foldername": {
+										"value": "@pipeline().parameters.foldername",
+										"type": "Expression"
+									},
+									"filename": {
+										"value": "@pipeline().parameters.filename",
+										"type": "Expression"
+									}
 								}
 							}
 						]
