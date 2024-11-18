@@ -73,12 +73,20 @@
 						"storageaccount": "storage1234sdc"
 					}
 				},
+				"parameters": {
+					"filename": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "accounts.csv",
+						"fileName": {
+							"value": "@dataset().filename",
+							"type": "Expression"
+						},
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
@@ -121,11 +129,27 @@
 						"storageaccount": "storage1234sdc"
 					}
 				},
+				"parameters": {
+					"foldername": {
+						"type": "String"
+					},
+					"filename": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "Parquet",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@formatDateTime(dataset().filename)",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@dataset().foldername",
+							"type": "Expression"
+						},
 						"fileSystem": "proccesed"
 					},
 					"compressionCodec": "snappy"
@@ -189,20 +213,33 @@
 							{
 								"referenceName": "DelimitedText1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"filename": "accounts.csv"
+								}
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "Parquet1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"foldername": "new",
+									"filename": "hello"
+								}
 							}
 						]
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"Filename": {
+						"type": "string"
+					},
+					"foldername": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
