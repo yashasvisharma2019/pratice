@@ -142,14 +142,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@formatDateTime(dataset().filename)",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@dataset().foldername",
-							"type": "Expression"
-						},
 						"fileSystem": "proccesed"
 					},
 					"compressionCodec": "snappy"
@@ -224,7 +216,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"foldername": "new",
-									"filename": "hello"
+									"filename": "hello.parquet"
 								}
 							}
 						]
@@ -232,6 +224,14 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"foldername": {
+						"type": "string"
+					},
+					"filename": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
