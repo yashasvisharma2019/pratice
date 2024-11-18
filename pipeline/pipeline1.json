@@ -68,6 +68,9 @@
 		"parameters": {
 			"file": {
 				"type": "string"
+			},
+			"storageroom": {
+				"type": "string"
 			}
 		},
 		"annotations": []
