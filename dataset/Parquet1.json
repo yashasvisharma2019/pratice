@@ -8,14 +8,6 @@
 				"storageaccount": "storage1234sdc"
 			}
 		},
-		"parameters": {
-			"foldername": {
-				"type": "String"
-			},
-			"filename": {
-				"type": "String"
-			}
-		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
