@@ -62,7 +62,13 @@
 				"outputs": [
 					{
 						"referenceName": "DelimitedText1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename12": {
+								"value": "@utcNow(pipeline().parameters.name)",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
