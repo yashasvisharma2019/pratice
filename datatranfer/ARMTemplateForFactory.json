@@ -413,14 +413,24 @@
 							{
 								"referenceName": "salesds",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"filename12": {
+										"value": "@pipeline().parameters.name",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "DelimitedText1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"filename12": {
+										"value": "@utcNow(pipeline().parameters.name)",
+										"type": "Expression"
+									}
+								}
 							}
 						]
 					}
@@ -506,13 +516,18 @@
 					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"filename12": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@utcNow()",
+							"value": "@dataset().filename12",
 							"type": "Expression"
 						},
 						"folderPath": "new",
@@ -704,12 +719,20 @@
 					"referenceName": "backend",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"filename12": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "accounts.csv",
+						"fileName": {
+							"value": "@dataset().filename12",
+							"type": "Expression"
+						},
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
