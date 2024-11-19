@@ -50,7 +50,13 @@
 				"inputs": [
 					{
 						"referenceName": "salesds",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename12": {
+								"value": "@pipeline().parameters.name",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
