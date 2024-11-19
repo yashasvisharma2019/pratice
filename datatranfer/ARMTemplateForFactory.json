@@ -381,7 +381,7 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
+									"fileListPath": "raw",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -506,6 +506,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"folderPath": "new",
 						"fileSystem": "newdata"
 					},
 					"columnDelimiter": ",",
@@ -699,7 +700,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "transactions.csv",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
