@@ -158,6 +158,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@utcNow()",
+							"type": "Expression"
+						},
 						"folderPath": "new",
 						"fileSystem": "newdata"
 					},
@@ -352,6 +356,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": "accounts.csv",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
@@ -780,7 +785,7 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
-									"fileListPath": "raw",
+									"recursive": true,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
@@ -826,6 +831,11 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"name": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
